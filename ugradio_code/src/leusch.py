@@ -396,12 +396,12 @@ class LeuschNoiseServer:
             self.prev_cmd = cmd
             GPIO.setmode(GPIO.BCM) # Errors out if import RPi.GPIO failed
             GPIO.setwarnings(False)
-            GPIO.setup(05, GPIO.OUT) # pin 29
+            GPIO.setup(0.5, GPIO.OUT) # pin 29
             # switch pin 29 of Raspberry Pi to TTL level low
             if cmd == CMD_NOISE_OFF:
                 if self.verbose: print('write digital I/O low')
-                GPIO.output(05, False)   # pin 29
+                GPIO.output(0.5, False)   # pin 29
             # switch pin 29 of Raspberry Pi to TTL level high
             elif cmd == CMD_NOISE_ON:
                 if self.verbose: print('write digital I/O high')
-                GPIO.output(05, True)   # pin 29
+                GPIO.output(0.5, True)   # pin 29
